@@ -51,7 +51,7 @@ namespace DesignPatterns
             WriteLine("Builder ...");
 
             // without builder
-            WriteLine("Without builder ...");
+            WriteLine("\nWithout builder ...");
             var hello = "hello";
             var sb = new StringBuilder();
             sb.Append("<p>");
@@ -68,6 +68,14 @@ namespace DesignPatterns
             }
             sb.Append("</ul>");
             WriteLine(sb);
+
+            // with builder
+            WriteLine("\nWith builder ...");
+
+            var builder = new HtmlBuilder("ul");
+            builder.AddChild("li", "hello");
+            builder.AddChild("li", "world");
+            WriteLine(builder.ToString());
 
             WriteLine("");
             #endregion
